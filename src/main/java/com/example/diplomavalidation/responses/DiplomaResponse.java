@@ -6,11 +6,13 @@ import java.util.List;
 
 public class DiplomaResponse {
 
+    private String message;
     private String name;
     private Double average;
     private List<SubjectRequest> subjects;
 
-    public DiplomaResponse(String name, Double average, List<SubjectRequest> subjects) {
+    public DiplomaResponse(String message, String name, Double average, List<SubjectRequest> subjects) {
+        this.message = message;
         this.name = name;
         this.average = average;
         this.subjects = subjects;
@@ -38,5 +40,13 @@ public class DiplomaResponse {
 
     public void setSubjects(List<SubjectRequest> subjects) {
         this.subjects = subjects;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

@@ -20,6 +20,11 @@ public class SubjectRequest {
     public SubjectRequest() {
     }
 
+    public SubjectRequest(String subject, Integer note) {
+        this.subject = subject;
+        this.note = note;
+    }
+
     public String getSubject() {
         return subject;
     }

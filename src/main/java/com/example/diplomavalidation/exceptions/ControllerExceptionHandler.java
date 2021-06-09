@@ -93,4 +93,11 @@ public class ControllerExceptionHandler {
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(err);
     }
+
+    @ExceptionHandler(StudentFailedException.class)
+    public ResponseEntity<StandardError> validation(StudentFailedException e, HttpServletRequest httpServletRequest) {
+        StandardError err = new StandardError(HttpStatus.PRECONDITION_FAILED.value(),
+                e.getMessage(), System.currentTimeMillis(), httpServletRequest.getRequestURI());
+        return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).body(err);
+    }
 }
